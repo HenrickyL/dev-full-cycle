@@ -20,3 +20,7 @@
 * **Day 3:** Sistema de gerenciamento de ingressos - GO
 * **Day 4:** Frontend - Next.js
 * **Day 5:** integração
+
+## Arquitetura do Sistema
+![](doc/imgs/arquitetura.png)
+![](doc/imgs/fluxo.png)
