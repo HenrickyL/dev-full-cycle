@@ -22,4 +22,22 @@ model Event{
   date          DateTime
   createdAt     DateTime    @default(now())
   updateAt      DateTime    @updatedAt
+
+  Spot          Spot[]
+}
+
+
+model Spot{
+  id            String      @id @default(uuid())
+  name          String
+  eventId       String      
+  status        SpotStatus
+  createdAt     DateTime    @default(now())
+  updateAt      DateTime    @updatedAt
+  Event         Event @relation(fields: [eventId], references: [id])
+}
+
+enum SpotStatus{
+  available
+  reserved
 }
