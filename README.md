@@ -13,4 +13,10 @@
 > além do CRUD
 
 
-[Day 1](doc/Day1.md)
+## Ordem do desenvolvimento
+
+* [**Day 1:** API de Parceiros - Nest.js](doc/Day1.md)
+* **Day 2:** API Gateway - Kong
+* **Day 3:** Sistema de gerenciamento de ingressos - GO
+* **Day 4:** Frontend - Next.js
+* **Day 5:** integração
