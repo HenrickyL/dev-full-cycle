@@ -38,6 +38,6 @@ export class EventsService {
   }
 
   remove(id: string) {
-    return `This action removes a #${id} event`;
+    return this.prismaService.event.delete({ where: { id: id } });
   }
 }
