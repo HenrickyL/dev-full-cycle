@@ -13,6 +13,7 @@
 * `npm install -g @nestjs/cli`
 * `nest new partners-api`
 * `nest generate resource`
+* `npx prisma init`
 
 ---------------
 ## Projeto Prático
