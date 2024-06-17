@@ -14,6 +14,7 @@
 * `nest new partners-api`
 * `nest generate resource`
 * `npx prisma init`
+* `npx prisma migrate dev`
 
 ---------------
 ## Projeto Prático

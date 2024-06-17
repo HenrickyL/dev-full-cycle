@@ -12,3 +12,14 @@ datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
 }
+
+
+model Event{
+  id            String      @id @default(uuid())
+  name          String
+  description   String
+  date          DateTime
+  createdAt     DateTime    @default(now())
+  updateAt      DateTime    @updatedAt
+  
+}
