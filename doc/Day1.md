@@ -12,6 +12,7 @@
 
 * `npm install -g @nestjs/cli`
 * `nest new partners-api`
+* `nest generate resource`
 
 ---------------
 ## Projeto Prático
