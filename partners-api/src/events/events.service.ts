@@ -19,8 +19,10 @@ export class EventsService {
     return this.prismaService.event.findMany();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} event`;
+  findOne(id: string) {
+    return this.prismaService.event.findFirst({
+      where: { id: id },
+    });
   }
 
   update(id: number, updateEventDto: UpdateEventDto) {
