@@ -1,9 +1,9 @@
 # Day 1
 
 ## Agenda
-- [ ] Entender o projeto prático
-- [ ] Tecnologias utilizadas
-- [ ] Ordem do desenvolvimento
+- [x] Entender o projeto prático
+- [x] Tecnologias utilizadas
+- [x] Ordem do desenvolvimento
 - [ ] Entendimento dos MicroServiços
 - [ ] Iniciar o primeiro micro serviço
 
@@ -16,10 +16,21 @@ Sistema de venda de ingressos
 * Frontend
 * API Gateway (user - microservices)
 
-# Tecnologias
+## Tecnologias
 
 * Docker
 * GO lang
 * Next.js
 * Nest.js
 * Kong - Api Gateway
+
+## MicroServiço parceiros de ingressos - Nest.js
+
+* Typescrip
+* Nest.js
+* Prisma ORM
+* Rest
+* Autenticação
+
+## Nest.js
+* Arquitetura Modular
