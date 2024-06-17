@@ -18,8 +18,8 @@ model Event{
   id            String      @id @default(uuid())
   name          String
   description   String
+  price         Float
   date          DateTime
   createdAt     DateTime    @default(now())
   updateAt      DateTime    @updatedAt
-  
 }
