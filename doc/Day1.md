@@ -8,13 +8,19 @@
 - [ ] Iniciar o primeiro micro serviço
 
 ---------------
+## Commands
+
+* `npm install -g @nestjs/cli`
+* `nest new partners-api`
+
+---------------
 ## Projeto Prático
 Sistema de venda de ingressos
 
 * Gerenciar eventos / processamento de reserva
 * Sistema de parceiros
 * Frontend
-* API Gateway (user - microservices)
+* API Gateway (user - microservices) 
 
 ## Tecnologias
 
