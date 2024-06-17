@@ -6,12 +6,17 @@ import { PrismaService } from 'src/prisma/prisma.service';
 @Injectable()
 export class EventsService {
   constructor(private prismaService: PrismaService) {}
-  create(createEventDto: CreateEventDto) {
-    return 'This action adds a new event';
+  create(dto: CreateEventDto) {
+    return this.prismaService.event.create({
+      data: {
+        ...dto,
+        date: new Date(dto.date),
+      },
+    });
   }
 
   findAll() {
-    return `This action returns all events`;
+    return this.prismaService.event.findMany();
   }
 
   findOne(id: number) {
