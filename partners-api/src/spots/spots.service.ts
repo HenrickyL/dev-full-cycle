@@ -3,6 +3,7 @@ import { CreateSpotDto } from './dto/create-spot.dto';
 import { UpdateSpotDto } from './dto/update-spot.dto';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { SpotStatusEnum } from './dto/SpotStatusEnum';
+import { NotFoundException } from 'src/_infra/Exceptions';
 
 type CreateSpotInput = CreateSpotDto & { eventId: string };
 
@@ -16,7 +17,7 @@ export class SpotsService {
       where: { id: dto.eventId },
     });
     if (!event) {
-      throw new Error('Event Not Found');
+      throw new NotFoundException('Event Not Found');
     }
     return this.prismaService.spot.create({
       data: {
