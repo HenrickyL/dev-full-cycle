@@ -2,28 +2,52 @@ import { Injectable } from '@nestjs/common';
 import { CreateSpotDto } from './dto/create-spot.dto';
 import { UpdateSpotDto } from './dto/update-spot.dto';
 import { PrismaService } from 'src/prisma/prisma.service';
+import { SpotStatusEnum } from './dto/SpotStatusEnum';
+
+type CreateSpotInput = CreateSpotDto & { eventId: string };
 
 @Injectable()
 export class SpotsService {
   constructor(private prismaService: PrismaService) {}
 
-  create(dto: CreateSpotDto) {
-    this.prismaService.spot.create({ data: dto });
+  async create(dto: CreateSpotInput) {
+    console.log(dto);
+    const event = await this.prismaService.event.findFirst({
+      where: { id: dto.eventId },
+    });
+    if (!event) {
+      throw new Error('Event Not Found');
+    }
+    return this.prismaService.spot.create({
+      data: {
+        ...dto,
+        status: SpotStatusEnum.AVAILABLE,
+      },
+    });
   }
 
-  findAll() {
-    return `This action returns all spots`;
+  findAll(eventId: string) {
+    return this.prismaService.spot.findMany({
+      where: { eventId },
+    });
   }
 
-  findOne(id: string) {
-    return `This action returns a #${id} spot`;
+  findOne(eventId: string, spotId: string) {
+    return this.prismaService.spot.findFirst({
+      where: { eventId: eventId, id: spotId },
+    });
   }
 
-  update(id: string, updateSpotDto: UpdateSpotDto) {
-    return `This action updates a #${id} spot`;
+  update(eventId: string, spotId: string, dto: UpdateSpotDto) {
+    return this.prismaService.spot.update({
+      where: { eventId: eventId, id: spotId },
+      data: dto,
+    });
   }
 
-  remove(id: string) {
-    return `This action removes a #${id} spot`;
+  remove(eventId: string, spotId: string) {
+    return this.prismaService.spot.delete({
+      where: { eventId: eventId, id: spotId },
+    });
   }
 }
