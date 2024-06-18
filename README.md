@@ -31,3 +31,4 @@
 ### partners-api (Nest.js & DB) 
 > `docker compose up --build`
 > `docker compose exec app bash`
+> `npm run start:dev`
