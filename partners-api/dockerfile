@@ -1,0 +1,24 @@
+FROM node:21-slim
+# dependencies (openssl - prisma) (procps - process machine - nestjs/cli )
+RUN apt update && apt install -y openssl procps
+
+RUN npm install -g npm@10.8.1
+RUN npm install -g @nestjs/cli@10.3.2
+
+WORKDIR /home/node/app
+
+COPY package*.json ./
+
+RUN npm install
+COPY . .
+
+ARG DATABASE_URL
+ENV DATABASE_URL=${DATABASE_URL}
+
+
+#user default - for permissions
+USER node
+
+# to not kill the process
+CMD tail -f /dev/null
+# CMD ["sh", "-c", "npx prisma migrate dev && npm run start:dev"]

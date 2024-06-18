@@ -24,3 +24,10 @@
 ## Arquitetura do Sistema
 ![](doc/imgs/arquitetura.png)
 ![](doc/imgs/fluxo.png)
+
+
+## How to Run?
+
+### partners-api (Nest.js & DB) 
+> `docker compose up --build`
+> `docker compose exec app bash`
