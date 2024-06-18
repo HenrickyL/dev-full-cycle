@@ -38,6 +38,6 @@ model Spot{
 }
 
 enum SpotStatus{
-  available
-  reserved
+  AVAILABLE
+  RESERVED
 }
