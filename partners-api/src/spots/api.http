@@ -1,7 +1,7 @@
 GET http://localhost:3000/events
 
 ###
-@eventID = be6dc6af-f553-4a5e-a869-ac1cbf957a6a
+@eventID = 3c95d544-96b0-40e5-9920-ae0fdd13e9d3
 
 
 ###
@@ -12,7 +12,7 @@ POST http://localhost:3000/events/{{eventID}}/spots
 Content-Type: application/json
 
 {
-  "name": "new Spot"
+  "name": "A1"
 }
 ###
 
