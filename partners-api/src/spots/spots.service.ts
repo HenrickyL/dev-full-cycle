@@ -12,7 +12,6 @@ export class SpotsService {
   constructor(private prismaService: PrismaService) {}
 
   async create(dto: CreateSpotInput) {
-    console.log(dto);
     const event = await this.prismaService.event.findFirst({
       where: { id: dto.eventId },
     });
