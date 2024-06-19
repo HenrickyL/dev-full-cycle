@@ -19,6 +19,7 @@
 * `nest generate service prisma`
 * `nest generate library`
 * `nest generate app`
+* `npm i @nestjs/config`
 
 ---------------
 ## Projeto Prático
