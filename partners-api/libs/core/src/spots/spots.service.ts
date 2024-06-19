@@ -3,7 +3,7 @@ import { CreateSpotDto } from './dto/create-spot.dto';
 import { UpdateSpotDto } from './dto/update-spot.dto';
 import { SpotStatusEnum } from './dto/SpotStatusEnum';
 import { PrismaService } from '../prisma/prisma.service';
-import { NotFoundException } from 'apps/partners-api/src/_infra/Exceptions';
+import { NotFoundException } from '_infra/Exceptions';
 
 type CreateSpotInput = CreateSpotDto & { eventId: string };
 

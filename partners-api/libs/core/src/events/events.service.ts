@@ -5,7 +5,7 @@ import { ReserveSpotDto } from './dto/reserve-spot.dto';
 import { Prisma, TicketStatus } from '@prisma/client';
 import { PrismaService } from '../prisma/prisma.service';
 import { SpotStatusEnum } from '../spots/dto/SpotStatusEnum';
-import { BadRequestException } from 'apps/partners-api/src/_infra/Exceptions';
+import { BadRequestException } from '_infra/Exceptions';
 
 @Injectable()
 export class EventsService {
