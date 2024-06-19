@@ -5,12 +5,12 @@ services:
     image: mysql:8.0.30-debian
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: partners-api
     ports:
       - 3306:3306
     networks:
       - app-network
-    # volumes:
+    volumes:
+      - ./.docker/mysql:/docker-entrypoint-initdb.d
     #   - ./.docker/dbbata:/var/lib/mysql
   app:
     build:
