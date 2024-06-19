@@ -15,8 +15,9 @@
 * `nest generate resource`
 * `npx prisma init`
 * `npx prisma migrate dev`
-* `nest g module prisma`
-* `nest g service prisma`
+* `nest generate module prisma`
+* `nest generate service prisma`
+* `nest generate library`
 
 ---------------
 ## Projeto Prático
