@@ -1,6 +1,6 @@
 import { TicketKindEnum } from './TicketKindEnum';
 
-export interface ReserveSpotDto {
+export interface ReserveSpotRequest {
   spots: string[];
   ticket_kind: TicketKindEnum;
   email: string;
