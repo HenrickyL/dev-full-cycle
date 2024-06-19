@@ -2,8 +2,8 @@ import { Injectable } from '@nestjs/common';
 import { CreateSpotDto } from './dto/create-spot.dto';
 import { UpdateSpotDto } from './dto/update-spot.dto';
 import { SpotStatusEnum } from './dto/SpotStatusEnum';
-import { NotFoundException } from 'src/_infra/Exceptions';
 import { PrismaService } from '../prisma/prisma.service';
+import { NotFoundException } from 'apps/partners-api/src/_infra/Exceptions';
 
 type CreateSpotInput = CreateSpotDto & { eventId: string };
 
