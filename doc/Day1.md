@@ -20,6 +20,7 @@
 * `nest generate library`
 * `nest generate app`
 * `npm i @nestjs/config`
+* `npm i dotenv-cli`
 
 ---------------
 ## Projeto Prático
