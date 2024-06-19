@@ -18,6 +18,7 @@
 * `nest generate module prisma`
 * `nest generate service prisma`
 * `nest generate library`
+* `nest generate app`
 
 ---------------
 ## Projeto Prático
