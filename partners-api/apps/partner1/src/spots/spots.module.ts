@@ -3,7 +3,7 @@ import { SpotsController } from './spots.controller';
 import { SpotsCoreModule } from '@app/core';
 
 @Module({
-  controllers: [SpotsController],
   imports: [SpotsCoreModule],
+  controllers: [SpotsController],
 })
 export class SpotsModule {}
