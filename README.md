@@ -12,3 +12,23 @@
 
 > além do CRUD
 
+
+## Ordem do desenvolvimento
+
+* [**Day 1:** API de Parceiros - Nest.js](doc/Day1.md)
+* **Day 2:** API Gateway - Kong
+* **Day 3:** Sistema de gerenciamento de ingressos - GO
+* **Day 4:** Frontend - Next.js
+* **Day 5:** integração
+
+## Arquitetura do Sistema
+![](doc/imgs/arquitetura.png)
+![](doc/imgs/fluxo.png)
+
+
+## How to Run?
+
+### partners-api (Nest.js & DB) 
+> `docker compose up --build`
+> `docker compose exec app bash`
+> `npm run start:dev`

@@ -1,0 +1,39 @@
+GET http://localhost:3000/events
+
+###
+@eventID = 3c95d544-96b0-40e5-9920-ae0fdd13e9d3
+
+
+###
+GET http://localhost:3000/events/{{eventID}}/spots
+###
+# @name createSpot
+POST http://localhost:3000/events/{{eventID}}/spots
+Content-Type: application/json
+
+{
+  "name": "A1"
+}
+###
+
+@spotID = {{ createSpot.response.body.id }}
+
+
+
+###
+GET http://localhost:3000/events/{{eventID}}/spots/{{spotID}}
+
+###
+PATCH  http://localhost:3000/events/{{eventID}}/spots/{{spotID}}
+Content-Type: application/json
+
+{
+  "name": "New Event Update"
+}
+
+
+
+###
+DELETE http://localhost:3000/events/{{eventID}}/spots/{{spotID}}
+
+

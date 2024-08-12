@@ -1,0 +1,76 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Event {
+  id          String   @id @default(uuid())
+  name        String
+  description String
+  price       Float
+  date        DateTime
+  createdAt   DateTime @default(now())
+  updateAt    DateTime @updatedAt
+
+  Spots Spot[]
+}
+
+model Spot {
+  id                 String               @id @default(uuid())
+  name               String
+  eventId            String
+  status             SpotStatus
+  createdAt          DateTime             @default(now())
+  updateAt           DateTime             @updatedAt
+  Event              Event                @relation(fields: [eventId], references: [id])
+  ReservationHistory ReservationHistory[]
+  Ticket             Ticket?
+}
+
+enum SpotStatus {
+  AVAILABLE
+  RESERVED
+}
+
+model Ticket {
+  id         String     @id @default(uuid())
+  email      String
+  ticketKind TicketKind
+  createdAt  DateTime   @default(now())
+  updateAt   DateTime   @updatedAt
+  spotId     String
+  Spot       Spot       @relation(fields: [spotId], references: [id])
+
+  @@unique([spotId])
+}
+
+enum TicketKind {
+  FULL
+  HALF
+}
+
+model ReservationHistory {
+  id         String       @id @default(uuid())
+  email      String
+  ticketKind TicketKind
+  status     TicketStatus
+  createdAt  DateTime     @default(now())
+  updateAt   DateTime     @updatedAt
+  spotId     String
+  Spot       Spot         @relation(fields: [spotId], references: [id])
+}
+
+enum TicketStatus {
+  RESERVED
+  CANCELED
+}
